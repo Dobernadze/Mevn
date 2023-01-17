@@ -16,7 +16,7 @@ app.use(function(req, res, next) {
 
 //database stuff
 
-const url ='mongodb+srv://qwerty:qwerty@cluster0.v5n9urc.mongodb.net/?retryWrites=true&w=majority'
+const url ='mongodb://localhost:27017'
 mongoose.connect(url, {
     useNewUrlParser: true,
     useUnifiedtopology: true
