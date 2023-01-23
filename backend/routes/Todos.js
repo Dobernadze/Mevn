@@ -11,11 +11,11 @@ router.get('/', async (req, res) => {
 //Create new Todo
 router.post('/new', async  (req, res) => {
     const newTodo = new Todo(
-        //req.body  //What the Vue App is sending
-        {
+        req.body  //What the Vue App is sending
+        /* {
             author: 'Flanders',
             todo:'Go to Canada'
-        }
+        } */
     )
     const savedTodo = await newTodo.save();
     res.json(savedTodo);
@@ -40,7 +40,8 @@ router.delete('/delete/:id', async(req, res) => {
 //Update by id
 router.put('/update/:id', async(req, res) => {
     const tUpdate = await Todo.updateOne(
-        //{_id: req.params.id}, {$set: req.body}
+    {_id: req.params.id}, 
+    //{$set: req.body}
         { 
         author:'Bart',
         todo:'Skating'
